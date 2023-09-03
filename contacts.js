@@ -26,7 +26,7 @@ const removeContact = async ({ id: contactId }) => {
   });
   const contacts = JSON.parse(fileData);
   const updatedContacts = contacts.filter(
-    (contact) => contact.id !== +contactId
+    (contact) => contact.id != contactId
   );
   await fs.writeFile(contactsPath, JSON.stringify(updatedContacts));
   console.log(updatedContacts);
